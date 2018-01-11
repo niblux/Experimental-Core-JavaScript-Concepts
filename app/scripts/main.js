@@ -1,18 +1,49 @@
-// [4, 5, 1, 3] ➞ 5
+const TAX_RATE = 0.25;
+const PHONE_PRICE = 99.99
 
-// [300, 200, 600, 150] ➞ 600
+var accessory = 9.99;
 
-var largeArr = [1000, 1001, 857, 1]; // 1001
+var spending_limit = 200;
 
-var largestNumber = Math.max(...largeArr)
+var bankBalance = 600;
 
-console.dir(largestNumber)
+var saleTotal = 0;
 
-// function findLargestNum(arr) {
-  
-//   var counter = 0;
-  
-//   while (counter <= 0) {
-    
-//   }
-// }
+// buy phone  
+
+function buyPhone(salePrice) {
+  return bankBalance - salePrice;
+}
+
+function calculatePrice(phonePrice) {
+  return saleTotal + phonePrice;
+}
+
+function buyAccessory(accessPrice) {
+  return saleTotal + accessPrice;
+}
+
+function updateBankBalance(transaction) {
+  return bankBalance - transaction;
+}
+
+function startSale(phonePrice, access) {
+   console.log('starting balance', bankBalance)
+   
+   while (bankBalance >= phonePrice) { // keep buying
+     saleTotal = calculatePrice(phonePrice);
+     console.log('Total :', saleTotal.toFixed(2));
+     bankBalance = buyPhone(saleTotal); 
+     console.log('bank balance', bankBalance.toFixed(2));
+     
+     if(saleTotal < spending_limit) {
+       bankBalance = bankBalance - buyAccessory(access);
+     } else {
+       console.log('after access', bankBalance.toFixed(2));
+     }
+   } 
+ 
+}
+
+startSale(PHONE_PRICE, accessory);
+
