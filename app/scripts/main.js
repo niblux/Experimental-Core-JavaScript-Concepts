@@ -1,3 +1,9 @@
+// Add User Input 
+
+// Test Input 
+
+// Add Warning/Validations 
+
 const TAX_RATE = 0.25;
 const PHONE_PRICE = 99.99
 
