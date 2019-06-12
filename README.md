@@ -1,7 +1,4 @@
 # Testing Sandbox for JavaScript
-Testing repo for Vanilla JS : Fundamentals including the following :
+Testing repo for Vanilla JS.
 
-- this, bind , call , apply
-- Promises and Async/Await
-- classes , constructors , super()
-- ES6 Object Destructuring
+1. let, var , const
