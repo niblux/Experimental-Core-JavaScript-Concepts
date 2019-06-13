@@ -15,7 +15,7 @@ function testLet() {
 }
 
 testLet();
-// console.log(b); // ReferenceError
+// console.log(b); // ReferenceError // script terminates here
 
 if (true) {
     let c = 3; // block scoped
@@ -24,4 +24,11 @@ if (true) {
 }
 
 console.log(a) // now 4
-console.log(c) // ReferenceError
+// console.log(c) // ReferenceError // or here 
+
+const i = 'immutable';
+// i = 'mutable';
+
+console.log('You cannot change me i am', i); // Uncaught TypeError: Assignment to constant variable.
+
+
