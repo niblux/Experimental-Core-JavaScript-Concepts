@@ -1,7 +1,5 @@
 var obj = {
-  name: () => {
-    return console.log('My name is ....')
-  },
+  name: undefined, // make undefined to trigger default
   occupation: 'dev',
   age: 42,
   location: 'London Town',
@@ -12,8 +10,8 @@ var obj = {
   quote:'You sound like your from Londannn mateee'
 };
  
-const { name, ...rest } = obj; // setting a default value.
-// console.log(name, rest);  // My name is ....
+const { name = () => console.log('I am a default function')  , ...rest } = obj; // setting a default value.
+console.log(name(), rest);  // My name is ....
 
 /** The same can be done with arrays */
 
