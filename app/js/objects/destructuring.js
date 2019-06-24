@@ -11,6 +11,7 @@ var obj = {
 };
  
 const { name = () => console.log('I am a default function')  , ...rest } = obj; // setting a default value.
+const { age = 42 } = obj; // another default value.
 console.log(name(), rest);  // My name is ....
 
 /** The same can be done with arrays */
