@@ -4,7 +4,7 @@
 
 // Currying - Partial Application
 const fn = (a) => (b) => {
-   return a + b; 
+    return a + b;
 };
 
 /**
@@ -15,23 +15,23 @@ const fn = (a) => (b) => {
  * that one of those arguments will have specific value but the other is undecided.
  */
 
-// const fnOne = fn(1);
-// const fntwo = fnOne(2) // 3
+const foo = fn(5);
+const bar = (arr => arr = [foo(2)]);
 
-// console.log(fntwo);
+console.log(bar(2));
 
-const fn2 = (c) => {
-    return (d) => {
-        return d * c
-    } 
-}
+// const fn2 = (c) => {
+//     return (d) => {
+//         return d * c
+//     } 
+// }
 
 // - store first function
-const firstFunc = fn2(4); 
-// - now add firstFunc but with new param as your adding to the second function.
-const secondFunc = firstFunc(2); 
+// const firstFunc = fn2(4); 
+// // - now add firstFunc but with new param as your adding to the second function.
+// const secondFunc = firstFunc(2); 
 
-console.log(secondFunc);
+// console.log(secondFunc);
 
 // compose function
 // const compose = (...fns) => fns.reduce((f, g) => (...args) => f(g(...args)));
