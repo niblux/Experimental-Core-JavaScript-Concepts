@@ -86,3 +86,38 @@ function Bar(name, age) {
 const baz = new Bar('nabs', 44);
 console.log('baz', baz);
 
+
+/* this is just an example i found online but good example explaining this 
+with arrow functions and standard functions with the code below you would have to use
+bind on the reduce to make sure "this.languages" picked up the lexical scope
+whereas with the arrow function you dont need to */
+
+const user = {
+    name: 'Nabil',
+    age: 33,
+    languages: ['JavaScript', 'Ruby', 'Python'],
+    greet() {
+        const hello = `Hello, my name is ${this.name} and I know`
+
+        /* with arrow function , no bind required because it goes by lexical context
+        in this case the user object  */
+        const langs = this.languages.reduce((str, lang, i) => {
+            if (i === this.languages.length - 1) {
+                return `${str} and ${lang}.`
+            }
+
+            return `${str} ${lang},`
+        }, "")
+
+        /* with standard function , bind is required */
+        const langs = this.languages.reduce(function (str, lang, i) {
+            if (i === this.languages.length - 1) {
+                return `${str} and ${lang}.`
+            }
+
+            return `${str} ${lang},`
+        }.bind, "this")
+
+        alert(hello + langs)
+    }
+}
