@@ -36,6 +36,14 @@ arr.push(todo1);
 arr.push(todo2);
 console.log('arr', arr);
 
+var addedItems = [...arr, todo1Updated];
+// console.log('addedItems', addedItems);
+
+var addedItems2 = [...addedItems, todo2Updated];
+console.log('addedItems2', addedItems2);
+
+
+
 /*
     Now we have our array of objects we are going to perform an update
     this can be done in two ways.
@@ -45,31 +53,33 @@ console.log('arr', arr);
     2. We can stay modern and use the spread operator
  */
 
-// Spread 
-var fooSpread = arr.map((todo) => {
 
-    var returnValue = { ...todo };
 
-    if (todo.id === todo1Updated.id) {
-        return returnValue = todo1Updated
-    }
-    return returnValue;
-})
+// // Spread 
+// var fooSpread = arr.map((todo) => {
 
-console.log('SPREAD', fooSpread);
-//   [
-//     { text: 'I updated todo 1 with a spread', id: 1, name: 'Noah' },
-//     { text: 'I am also the original object', id: 2, name: 'Donna' }
-//   ]
+//     var returnValue = { ...todo };
 
-// Object.assign()
-var fooAssign = arr.map((todo) => {
+//     if (todo.id === todo1Updated.id) {
+//         return returnValue = todo1Updated
+//     }
+//     return returnValue;
+// })
 
-    if (todo.id === todo2Updated.id) {
-        return Object.assign({}, todo, todo2Updated)
-    }
-    return todo;
-})
+// console.log('SPREAD', fooSpread);
+// //   [
+// //     { text: 'I updated todo 1 with a spread', id: 1, name: 'Noah' },
+// //     { text: 'I am also the original object', id: 2, name: 'Donna' }
+// //   ]
 
-console.log('ASSIGN', fooAssign);
+// // Object.assign()
+// var fooAssign = arr.map((todo) => {
+
+//     if (todo.id === todo2Updated.id) {
+//         return Object.assign({}, todo, todo2Updated)
+//     }
+//     return todo;
+// })
+
+// console.log('ASSIGN', fooAssign);
 
