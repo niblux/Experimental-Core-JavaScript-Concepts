@@ -47,16 +47,24 @@ const alpha = 'abcdefghijklmnopqrstuvwxyz';
 const sortedLetters = alpha.split('');
 
 function alphabetPosition(text) {
-    let result = [];
-    let textArray = text.toLowerCase().split('');
-
-    textArray.map((el1) => {
-        sortedLetters.map((el2) => {
-            el1 === el2 ? result.push(sortedLetters.indexOf(el1) + 1) : '';
-        })
-    });
-    return result.join(' ');
+    return text
+        .toUpperCase()
+        .match(/[a-z]/gi)
+        .map((c) => console.log('code', c.charCodeAt()) || c.charCodeAt() - 64)
+        .join(' ');
 }
+
+// function alphabetPosition(text) {
+//     let result = [];
+//     let textArray = text.toLowerCase().split('');
+
+//     textArray.map((el1) => {
+//         sortedLetters.map((el2) => {
+//             el1 === el2 ? result.push(sortedLetters.indexOf(el1) + 1) : '';
+//         })
+//     });
+//     return result.join(' ');
+// }
 
 console.log(alphabetPosition("The sunset sets at twelve o' clock."));
 
