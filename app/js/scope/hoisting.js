@@ -10,27 +10,21 @@ var hst = 42;
 hoist();
 
 function hoist() {
-    console.log(bar); // undefined
-    var bar = 'The meaning of life';
+  console.log(bar); // undefined
+  var bar = "The meaning of life";
 }
 
-// Function Hoisting 
+// Function Hoisting
 foo();
 
 function foo() {
-    console.log('Hello up there !')
-};
+  console.log("Hello up there !");
+}
+
+var hst2 = 84;
 
 bar();
 
 const bar = function () {
-    console.log('Im down here'); // Reference Error
-}
-
-
-
-
-
-
-
-
+  console.log("Im down here"); // Reference Error
+};
