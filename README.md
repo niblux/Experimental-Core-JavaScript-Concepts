@@ -1,2 +1,3 @@
 # Testing Sandbox for JavaScript
-Testing repo for Vanilla JS.
+
+I primarliy use this repo to solidify and play around with core Javascript concepts.
